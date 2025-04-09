@@ -17,7 +17,7 @@ function Resume() {
   useEffect(() => {
     setWidth(window.innerWidth);
     try {
-      setResumeUrl("http://localhost:3000/api/resume/view"); // Your backend URL
+      setResumeUrl(`${process.env.REACT_APP_BACKEND_URL}/api/resume/view`); // Your backend URL
     } catch (error) {
       console.log("Kuch To Gadbald he Daya");
     }
@@ -31,7 +31,7 @@ function Resume() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href="http://localhost:3000/api/resume/download"
+            href={`${process.env.REACT_APP_BACKEND_URL}/api/resume/download`}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
